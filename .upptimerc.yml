@@ -1,0 +1,47 @@
+owner: cloudmantra-ai
+repo: mantrix-status
+
+sites:
+  - name: Mantrix App (Production)
+    url: https://mantrix.cloudmantra.ai
+    expectedStatusCodes: [200, 301, 302, 401, 403]
+  - name: Mantrix API (Production)
+    url: https://mantrix.cloudmantra.ai/api/v1/health
+    expectedStatusCodes: [200]
+  - name: Mantrix App (Staging)
+    url: https://mantrix-staging.cloudmantra.ai
+    expectedStatusCodes: [200, 301, 302, 401, 403]
+  - name: Mantrix API (Staging)
+    url: https://mantrix-staging.cloudmantra.ai/api/v1/health
+    expectedStatusCodes: [200]
+
+status-website:
+  cname: status.cloudmantra.ai   # TODO: optional — remove if you don't want a custom domain
+  logoUrl: https://mantrix.cloudmantra.ai/favicon.ico
+  name: Mantrix Status
+  introTitle: "**Mantrix Platform Status**"
+  introMessage: |
+    Real-time and historical availability of the Mantrix platform.
+    This page is published from independent infrastructure (GitHub Pages + GitHub Actions)
+    and is not hosted on the same systems it monitors.
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/cloudmantra-ai/mantrix-status
+
+assignees:
+  - jayhere1
+
+# Probe every 5 minutes (GitHub Actions cron)
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updates: "0 3 * * *"
+  updateTemplate: "0 0 * * *"
+  uptime: "*/5 * * * *"
+
+# SOC2 evidence retention — every probe result is committed to git,
+# providing an immutable, timestamped audit trail of availability.
