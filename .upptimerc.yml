@@ -2,10 +2,10 @@ owner: cloudmantra-ai
 repo: mantrix-status
 
 sites:
-  - name: Web App — what users see in the browser
+  - name: Web App
     url: https://mantrix.cloudmantra.ai
     expectedStatusCodes: [200, 301, 302, 401, 403]
-  - name: API — backend that powers the app
+  - name: API
     url: https://mantrix.cloudmantra.ai/api/v1/health
     expectedStatusCodes: [200]
 
