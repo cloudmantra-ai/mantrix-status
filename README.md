@@ -38,12 +38,12 @@ is what makes it valid SOC2 availability evidence.
 
 ## SOC2 mapping
 
-| Control | Evidence |
-|---|---|
-| CC7.2 — System monitoring | GitHub Actions cron + commit history of probes |
-| CC7.3 — Incident detection | Auto-opened Issues on probe failure |
-| CC7.4 — Incident response & comms | Issue comments → public status page |
-| A1.2 — Availability commitment | 90-day uptime % published per component |
+| Control                           | Evidence                                       |
+| --------------------------------- | ---------------------------------------------- |
+| CC7.2 — System monitoring         | GitHub Actions cron + commit history of probes |
+| CC7.3 — Incident detection        | Auto-opened Issues on probe failure            |
+| CC7.4 — Incident response & comms | Issue comments → public status page            |
+| A1.2 — Availability commitment    | 90-day uptime % published per component        |
 
 ## Adding components
 
