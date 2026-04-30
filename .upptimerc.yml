@@ -8,12 +8,6 @@ sites:
   - name: Mantrix API (Production)
     url: https://mantrix.cloudmantra.ai/api/v1/health
     expectedStatusCodes: [200]
-  - name: Mantrix App (Staging)
-    url: https://mantrix-staging.cloudmantra.ai
-    expectedStatusCodes: [200, 301, 302, 401, 403]
-  - name: Mantrix API (Staging)
-    url: https://mantrix-staging.cloudmantra.ai/api/v1/health
-    expectedStatusCodes: [200]
 
 status-website:
   cname: status.mantrix.cloudmantra.ai
