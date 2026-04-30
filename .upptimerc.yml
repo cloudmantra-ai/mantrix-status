@@ -16,7 +16,7 @@ sites:
     expectedStatusCodes: [200]
 
 status-website:
-  cname: status.cloudmantra.ai   # TODO: optional — remove if you don't want a custom domain
+  cname: status.mantrix.cloudmantra.ai
   logoUrl: https://mantrix.cloudmantra.ai/favicon.ico
   name: Mantrix Status
   introTitle: "**Mantrix Platform Status**"
