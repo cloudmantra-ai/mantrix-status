@@ -11,21 +11,75 @@ sites:
 
 status-website:
   cname: status.mantrix.cloudmantra.ai
-  logoUrl: https://mantrix.cloudmantra.ai/favicon.ico
+  logoUrl: https://raw.githubusercontent.com/cloudmantra-ai/mantrix-status/master/logo.svg
   name: Mantrix Status
-  introTitle: "**Mantrix Platform Status**"
+  introTitle: "Mantrix Platform Status"
   introMessage: |
     Real-time and historical availability of the Mantrix platform.
-    This page is published from independent infrastructure (GitHub Pages + GitHub Actions)
-    and is not hosted on the same systems it monitors.
+    Published from independent infrastructure (GitHub Pages + GitHub Actions),
+    not hosted on the systems it monitors.
   navbar:
     - title: Status
       href: /
+    - title: Mantrix
+      href: https://mantrix.cloudmantra.ai
     - title: GitHub
       href: https://github.com/cloudmantra-ai/mantrix-status
-
-assignees:
-  - jayhere1
+  theme: light
+  css: |
+    /* Mantrix brand — navy #00357a, orange #ff751f */
+    :root {
+      --color-accent: #00357a;
+      --color-link: #00357a;
+      --color-bg: #f7f9fc;
+      --color-fg: #0a1f3d;
+      --color-card-bg: #ffffff;
+      --color-success: #10b981;
+      --color-warning: #ff751f;
+      --color-error: #ef4444;
+    }
+    body {
+      background: var(--color-bg);
+      color: var(--color-fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, sans-serif;
+    }
+    nav, header {
+      background: #00357a !important;
+      color: #ffffff !important;
+    }
+    nav a, header a {
+      color: #ffffff !important;
+    }
+    nav a:hover, header a:hover {
+      color: #ff751f !important;
+    }
+    h1, h2, h3 {
+      color: #00357a;
+    }
+    a { color: #00357a; }
+    a:hover { color: #ff751f; }
+    button, .button {
+      background: #00357a !important;
+      color: #ffffff !important;
+      border: none;
+    }
+    button:hover, .button:hover {
+      background: #1a5a9e !important;
+    }
+    /* uptime status pills */
+    .status-up, [class*="up"] { color: #10b981; }
+    .status-down, [class*="down"] { color: #ef4444; }
+    .status-degraded, [class*="degraded"] { color: #ff751f; }
+    article, .card {
+      background: var(--color-card-bg);
+      border: 1px solid #e5e9f0;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,53,122,0.05);
+    }
+    img[alt*="logo" i], header img {
+      max-height: 40px;
+      width: auto;
+    }
 
 # Probe every 5 minutes (GitHub Actions cron)
 workflowSchedule:
