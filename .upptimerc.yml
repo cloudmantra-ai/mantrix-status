@@ -2,10 +2,10 @@ owner: cloudmantra-ai
 repo: mantrix-status
 
 sites:
-  - name: Mantrix App (Production)
+  - name: Web App — what users see in the browser
     url: https://mantrix.cloudmantra.ai
     expectedStatusCodes: [200, 301, 302, 401, 403]
-  - name: Mantrix API (Production)
+  - name: API — backend that powers the app
     url: https://mantrix.cloudmantra.ai/api/v1/health
     expectedStatusCodes: [200]
 
@@ -15,9 +15,11 @@ status-website:
   name: Mantrix Status
   introTitle: "Mantrix Platform Status"
   introMessage: |
-    Real-time and historical availability of the Mantrix platform.
-    Published from independent infrastructure (GitHub Pages + GitHub Actions),
-    not hosted on the systems it monitors.
+    Real-time and historical availability of the Mantrix platform. We monitor
+    the **Web App** (the user-facing site) and the **API** (the backend that
+    powers it) separately, so you can tell whether the page is broken or just
+    the data behind it. Published from independent infrastructure
+    (GitHub Pages + GitHub Actions), not hosted on the systems it monitors.
   navbar:
     - title: Status
       href: /
